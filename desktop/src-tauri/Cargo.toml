@@ -1,0 +1,11 @@
+[package]
+name = "codebase-search"
+version = "0.1.0"
+edition = "2021"
+description = "Tauri shell for Semantic Local Codebase Search (UNVERIFIED scaffold - see ../README.md)"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

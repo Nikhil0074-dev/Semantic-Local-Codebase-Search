@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="slcs-token" content="__SLCS_TOKEN__">
+  <title>Codebase Search · local</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="side" aria-label="Primary">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">⌕</span><span>Codebase<br>Search</span></div>
+      <nav class="nav" id="nav" aria-label="Pages">
+        <a href="#/search" data-page="search">Search</a>
+        <a href="#/repos" data-page="repos">Repositories</a>
+        <a href="#/settings" data-page="settings">Settings</a>
+      </nav>
+      <div class="side-section">
+        <h2 class="side-h">Indexed repositories</h2>
+        <ul class="repo-list" id="side-repos" aria-label="Repositories"></ul>
+      </div>
+      <div class="privacy" role="note">
+        <strong>Local only</strong>
+        <span>Code, embeddings and queries stay on this device. No telemetry.</span>
+        <span id="model-pill" class="pill" role="status">checking model…</span>
+      </div>
+    </aside>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="confirm" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <h2 id="confirm-title"></h2><p id="confirm-body"></p>
+      <div class="row end"><button value="cancel" class="btn">Cancel</button><button value="ok" class="btn danger" id="confirm-ok">Confirm</button></div>
+    </form>
+  </dialog>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

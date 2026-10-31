@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Codebase Search",
+  "version": "0.1.0",
+  "identifier": "dev.slcs.codebasesearch",
+  "build": { "frontendDist": "../ui" },
+  "app": { "windows": [], "security": { "csp": null } },
+  "bundle": { "active": true, "targets": "all" }
+}

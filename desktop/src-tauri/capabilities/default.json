@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Least privilege: the window shows a local web UI and is granted no Tauri IPC permissions.",
+  "windows": ["main"],
+  "permissions": []
+}
