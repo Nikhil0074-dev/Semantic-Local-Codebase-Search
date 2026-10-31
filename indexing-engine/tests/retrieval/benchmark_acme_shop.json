@@ -1,0 +1,311 @@
+{
+ "_note": "Written by hand BEFORE the first benchmark run. Grade 2 = primary answer, 1 = useful supporting code. Small (20 queries, 1 repository): indicative only.",
+ "repository": "sample-repositories/acme-shop",
+ "queries": [
+  {
+   "query": "Where do we handle JWT authentication refresh loops?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "frontend/src/api/httpClient.ts",
+     "symbol": "apiFetch",
+     "grade": 2
+    },
+    {
+     "path": "frontend/src/auth/sessionManager.ts",
+     "symbol": "refreshAccessToken",
+     "grade": 1
+    },
+    {
+     "path": "backend/api/routes.py",
+     "symbol": "refresh_endpoint",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "Which functions validate user permissions before updating a record?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/auth/permissions.py",
+     "symbol": "can_update_record",
+     "grade": 2
+    },
+    {
+     "path": "backend/auth/permissions.py",
+     "symbol": "require_permission",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "Where is the database connection initialized?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/db/connection.py",
+     "symbol": "init_database_pool",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "How does the application handle expired access tokens?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/auth/token_service.py",
+     "symbol": "verify_token",
+     "grade": 2
+    },
+    {
+     "path": "backend/auth/token_service.py",
+     "symbol": "TokenExpiredError",
+     "grade": 1
+    },
+    {
+     "path": "frontend/src/api/httpClient.ts",
+     "symbol": "apiFetch",
+     "grade": 1
+    },
+    {
+     "path": "backend/auth/token_service.py",
+     "symbol": "renew_credentials",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "Which files communicate with the payment gateway?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/payments/gateway_client.py",
+     "symbol": "PaymentGatewayClient._post",
+     "grade": 2
+    },
+    {
+     "path": "backend/payments/gateway_client.py",
+     "symbol": "PaymentGatewayClient.charge_card",
+     "grade": 2
+    },
+    {
+     "path": "services/billing/PaymentWebhookHandler.java",
+     "symbol": "PaymentWebhookHandler.handleGatewayEvent",
+     "grade": 1
+    },
+    {
+     "path": "frontend/src/components/CheckoutForm.tsx",
+     "symbol": "CheckoutForm",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "Where are API errors logged?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/logging_utils.py",
+     "symbol": "log_api_error",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "How does the frontend communicate with the backend?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "frontend/src/api/httpClient.ts",
+     "symbol": "apiFetch",
+     "grade": 2
+    },
+    {
+     "path": "frontend/src/api/httpClient.ts",
+     "symbol": "ApiClient.getJson",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "Where is the configuration for cloud storage?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/config/storage.py",
+     "symbol": "load_storage_settings",
+     "grade": 2
+    },
+    {
+     "path": "config/app.yaml",
+     "symbol": null,
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "What happens when a database transaction fails?",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "backend/db/connection.py",
+     "symbol": "run_in_transaction",
+     "grade": 2
+    },
+    {
+     "path": "backend/models/order_repository.py",
+     "symbol": "update_order_record",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "renew credentials before they lapse",
+   "category": "vocabulary-mismatch",
+   "relevant": [
+    {
+     "path": "backend/auth/token_service.py",
+     "symbol": "renew_credentials",
+     "grade": 2
+    },
+    {
+     "path": "frontend/src/auth/sessionManager.ts",
+     "symbol": "scheduleSilentRenewal",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "refreshAccessToken",
+   "category": "identifier",
+   "relevant": [
+    {
+     "path": "frontend/src/auth/sessionManager.ts",
+     "symbol": "refreshAccessToken",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "S3_BUCKET_NAME",
+   "category": "identifier",
+   "relevant": [
+    {
+     "path": "backend/config/storage.py",
+     "symbol": "load_storage_settings",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "/api/auth/refresh",
+   "category": "identifier",
+   "relevant": [
+    {
+     "path": "backend/api/routes.py",
+     "symbol": "refresh_endpoint",
+     "grade": 2
+    },
+    {
+     "path": "frontend/src/auth/sessionManager.ts",
+     "symbol": "refreshAccessToken",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "reserve inventory stock for an order",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "services/inventory/stock.go",
+     "symbol": "StockService.ReserveStock",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "send an email to the customer after they order",
+   "category": "vocabulary-mismatch",
+   "relevant": [
+    {
+     "path": "services/notifications/mailer.go",
+     "symbol": "SendOrderConfirmation",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "mark invoice as paid after payment webhook",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "services/billing/InvoiceService.java",
+     "symbol": "InvoiceService.markPaid",
+     "grade": 2
+    },
+    {
+     "path": "services/billing/PaymentWebhookHandler.java",
+     "symbol": "PaymentWebhookHandler.handleGatewayEvent",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "audit log table",
+   "category": "natural",
+   "relevant": [
+    {
+     "path": "db/migrations/002_add_audit_log.sql",
+     "symbol": "audit_log",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "retry a charge when the gateway times out",
+   "category": "vocabulary-mismatch",
+   "relevant": [
+    {
+     "path": "backend/payments/gateway_client.py",
+     "symbol": "PaymentGatewayClient._post",
+     "grade": 2
+    },
+    {
+     "path": "backend/payments/gateway_client.py",
+     "symbol": "PaymentGatewayClient.charge_card",
+     "grade": 1
+    }
+   ]
+  },
+  {
+   "query": "how are user passwords stored securely",
+   "category": "vocabulary-mismatch",
+   "relevant": [
+    {
+     "path": "backend/auth/passwords.py",
+     "symbol": "hash_password",
+     "grade": 2
+    }
+   ]
+  },
+  {
+   "query": "who is allowed to refund or delete",
+   "category": "vocabulary-mismatch",
+   "relevant": [
+    {
+     "path": "backend/auth/permissions.py",
+     "symbol": "<module>",
+     "grade": 2
+    },
+    {
+     "path": "backend/auth/permissions.py",
+     "symbol": "require_permission",
+     "grade": 1
+    }
+   ]
+  }
+ ]
+}

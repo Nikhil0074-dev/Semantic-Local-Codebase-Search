@@ -1,0 +1,6 @@
+numpy>=1.24
+pathspec>=0.12
+flask>=3.0
+
+[dev]
+pytest>=7

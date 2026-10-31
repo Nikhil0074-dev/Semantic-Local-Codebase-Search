@@ -1,0 +1,2 @@
+[console_scripts]
+slcs = slcs.cli:main

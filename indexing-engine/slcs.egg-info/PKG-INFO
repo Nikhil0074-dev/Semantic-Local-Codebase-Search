@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: slcs
+Version: 0.1.0
+Summary: Semantic Local Codebase Search Engine - privacy-first local code retrieval
+License: MIT
+Requires-Python: >=3.10
+Requires-Dist: numpy>=1.24
+Requires-Dist: pathspec>=0.12
+Requires-Dist: flask>=3.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7; extra == "dev"

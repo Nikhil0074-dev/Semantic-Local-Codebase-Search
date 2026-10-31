@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slcs"
+version = "0.1.0"
+description = "Semantic Local Codebase Search Engine - privacy-first local code retrieval"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "pathspec>=0.12", "flask>=3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+slcs = "slcs.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["slcs*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
