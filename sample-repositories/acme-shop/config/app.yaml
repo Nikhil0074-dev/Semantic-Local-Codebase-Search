@@ -1,0 +1,9 @@
+server:
+  port: 8080
+cloud_storage:
+  provider: s3
+  bucket: acme-shop-uploads
+  region: eu-west-1
+  signed_url_ttl_seconds: 600
+logging:
+  level: INFO
