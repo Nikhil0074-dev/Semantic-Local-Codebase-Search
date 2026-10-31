@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v165-x86_64-with-glibc2.39",
+    "cpu": "x86_64"
+  },
+  "runs": [
+    {
+      "files": 200,
+      "chunks": 1613,
+      "full_index_s": 0.8,
+      "noop_incremental_s": 0.01,
+      "one_file_edit_s": 0.01,
+      "edit_files_reindexed": 1,
+      "query_ms_median": 5.0,
+      "query_ms_p95": 7.3,
+      "db_mb": 9.0,
+      "peak_rss_mb": 62.5
+    },
+    {
+      "files": 1000,
+      "chunks": 8001,
+      "full_index_s": 4.39,
+      "noop_incremental_s": 0.02,
+      "one_file_edit_s": 0.023,
+      "edit_files_reindexed": 1,
+      "query_ms_median": 8.5,
+      "query_ms_p95": 21.9,
+      "db_mb": 45.0,
+      "peak_rss_mb": 119.9
+    },
+    {
+      "files": 3000,
+      "chunks": 24108,
+      "full_index_s": 14.66,
+      "noop_incremental_s": 0.09,
+      "one_file_edit_s": 0.106,
+      "edit_files_reindexed": 1,
+      "query_ms_median": 22.8,
+      "query_ms_p95": 49.8,
+      "db_mb": 135.8,
+      "peak_rss_mb": 262.7
+    }
+  ]
+}
