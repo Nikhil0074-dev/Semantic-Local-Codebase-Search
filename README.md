@@ -45,7 +45,7 @@ Embeddings: a deterministic offline baseline by default; **Ollama** (local) opti
 More in [docs/screenshots/](docs/screenshots/) (language filter, no results, keyboard focus, narrow window).
 
 ## High-Level Architecture
-
+![Architecture](diagram.png)
                  LOCAL SOFTWARE REPOSITORY
                             |
                             v
